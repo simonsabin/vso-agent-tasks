@@ -1,11 +1,7 @@
-/// <reference path="../../definitions/node.d.ts"/>
-/// <reference path="../../definitions/Q.d.ts" />
 /// <reference path="../../definitions/vso-task-lib.d.ts" />
 
 import path = require('path');
-import fs = require('fs');
 import os = require('os');
-import Q = require('q');
 var tl = require('vso-task-lib');
 
 // contents is a multiline input containing glob patterns
@@ -91,5 +87,5 @@ for (var i: number = 0; i < files.length; i++){
 }
 
 if (errorHappened) {
-    tl.setResult(1, "Couldn't delete one or more files", true);
+    tl.setResult(1, tl.loc("CantDeleteFiles", "Couldn't delete one or more files"));
 }
