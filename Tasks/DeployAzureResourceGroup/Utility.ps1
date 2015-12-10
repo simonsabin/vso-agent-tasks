@@ -285,6 +285,7 @@ function Get-CsmAndParameterFiles
           [string] $csmParametersFile)
 
     #Find the matching deployment definition File
+    Write-Verbose -Verbose "Finding deployment definition File ($csmFile)"
     $csmFile = Get-File $csmFile
     Write-Verbose -Verbose "deploymentDefinitionFile = $csmFile"
 
@@ -292,6 +293,7 @@ function Get-CsmAndParameterFiles
     if ($csmParametersFile -ne $env:BUILD_SOURCESDIRECTORY -and $csmParametersFile -ne [String]::Concat($env:BUILD_SOURCESDIRECTORY, "\"))
     {
         #Find the matching deployment definition Parameter File
+        Write-Verbose -Verbose "finding deployment definition Parameter File ($csmParametersFile)"
         $csmParametersFile = Get-File $csmParametersFile
         Write-Verbose -Verbose "deploymentDefinitionParametersFile = $csmParametersFile"
     }
