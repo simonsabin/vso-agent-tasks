@@ -68,7 +68,7 @@
             "required": false,
             "visibleRule": "ExecuteInTransaction = true",
             "defaultValue": "false",
-            "helpMarkDown": "Executes SQL script(s) within a transaction"
+            "helpMarkDown": "Acquires an exclusive app lock while executing scripts"
         },
         {
             "name": "AppLockName",
